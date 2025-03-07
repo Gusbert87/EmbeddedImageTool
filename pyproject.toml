@@ -1,0 +1,4 @@
+[project]
+name = "Embedded Image Tool"
+version = "0.0.1"
+dependencies = ["PyQt6", "PIL", "numpy"]
