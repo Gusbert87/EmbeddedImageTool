@@ -82,11 +82,12 @@ class MainWindow(QMainWindow):
             image.thumbnail((300,300))
             images.append(ImageFile(image, os.path.basename(file)))
 
-        self.image_cycler.setImages(images)
-        self.act.to565.setEnabled(True)
-        self.act.to5bit.setEnabled(True)
-        self.act.to8bit.setEnabled(True)
-    
+        if len(file_path) != 0:
+            self.image_cycler.setImages(images)
+            self.act.to565.setEnabled(True)
+            self.act.to5bit.setEnabled(True)
+            self.act.to8bit.setEnabled(True)
+        
     def saveFile(self):
         options = QFileDialog.Option.ShowDirsOnly
         filePath, _ = QFileDialog.getSaveFileName(self, "Save File", "", "Python Files (*.py);;All Files (*)", options=options)
